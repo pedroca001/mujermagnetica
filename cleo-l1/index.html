@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Styles -->
-    <!-- TIMESTAMP: 2026-01-28 UPDATE 2 -->
+    <!-- TIMESTAMP: 2026-01-28 UPDATE 3 -->
     <style>
         :root {
             --primary-color: #b00;
@@ -237,13 +237,26 @@
             color: #333;
         }
 
-        .comment-row {
-            display: flex;
-            gap: 10px;
+        .comment-thread {
             margin-bottom: 15px;
         }
 
-        /* .comment-row.has-children { } */
+        .comment-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        /* Replies Container */
+        .replies {
+            margin-left: 50px;
+            /* Indent replies */
+            padding-left: 10px;
+            border-left: 2px solid #e0e0e0;
+            /* The thread line */
+            /* Dotted line alternative: border-left: 2px dotted #ccc; */
+        }
 
         .avatar {
             width: 40px !important;
@@ -360,6 +373,11 @@
                 width: 100%;
                 /* Full width bubble on mobile often looks better */
             }
+
+            .replies {
+                margin-left: 20px;
+                /* Less indentation on mobile */
+            }
         }
     </style>
 
@@ -450,113 +468,139 @@
                 </div>
 
                 <div class="comments-list">
-                    <!-- Comment 1 -->
-                    <div class="comment-row">
-                        <img class="avatar" src="../img/SWmHRX2632243.jpeg" alt="Daniela">
-                        <div class="comment-content">
-                            <div class="bubble">
-                                <div class="name">Daniela Ávila</div>
-                                <div class="text">Lo vi pensando que solo era otra tontería más... pero me quedé en
-                                    shock cuando terminé. En serio, esto lo cambia TODO. 👀🔥</div>
+
+                    <!-- Block 1: Daniela -> Fernanda -->
+                    <div class="comment-thread">
+                        <!-- Parent -->
+                        <div class="comment-row">
+                            <img class="avatar" src="../img/SWmHRX2632243.jpeg" alt="Daniela">
+                            <div class="comment-content">
+                                <div class="bubble">
+                                    <div class="name">Daniela Ávila</div>
+                                    <div class="text">Lo vi pensando que solo era otra tontería más... pero me quedé en
+                                        shock cuando terminé. En serio, esto lo cambia TODO. 👀🔥</div>
+                                </div>
+                                <div class="actions">
+                                    <span>Me gusta</span> · <span>Responder</span> · <span class="likes-count"><img
+                                            src="../img/fblike.webp" alt="like"> 13</span> · <span class="time">1
+                                        m</span>
+                                </div>
                             </div>
-                            <div class="actions">
-                                <span>Me gusta</span> · <span>Responder</span> · <span class="likes-count"><img
-                                        src="../img/fblike.webp" alt="like"> 13</span> · <span class="time">1 m</span>
+                        </div>
+                        <!-- Reply -->
+                        <div class="replies">
+                            <div class="comment-row">
+                                <img class="avatar" src="../img/RFBJDv0760781.jpeg" alt="Fernanda">
+                                <div class="comment-content">
+                                    <div class="bubble">
+                                        <div class="name">Fernanda Beltrán</div>
+                                        <div class="text">Chicas, ¿cómo es que nunca había escuchado de esto??? Lo probé
+                                            con mi
+                                            esposo y me miró como si yo fuera una diosa 😳</div>
+                                    </div>
+                                    <div class="actions">
+                                        <span>Me gusta</span> · <span>Responder</span> · <span class="likes-count"><img
+                                                src="../img/fblike.webp" alt="like"> 15</span> · <span class="time">19
+                                            m</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Comment 2 -->
-                    <div class="comment-row has-children">
-                        <img class="avatar" src="../img/RFBJDv0760781.jpeg" alt="Fernanda">
-                        <div class="comment-content">
-                            <div class="bubble">
-                                <div class="name">Fernanda Beltrán</div>
-                                <div class="text">Chicas, ¿cómo es que nunca había escuchado de esto??? Lo probé con mi
-                                    esposo y me miró como si yo fuera una diosa 😳</div>
+                    <!-- Block 2: Valentina -> Laura -->
+                    <div class="comment-thread">
+                        <!-- Parent -->
+                        <div class="comment-row">
+                            <img class="avatar" src="../img/ynFAzm0760781.jpeg" alt="Valentina">
+                            <div class="comment-content">
+                                <div class="bubble">
+                                    <div class="name">Valentina Pineda</div>
+                                    <div class="text">Mi amiga me envió este video y pensé “ya valió”. Pero lo juro…
+                                        ¡esta
+                                        Olivia me dio ORO!</div>
+                                </div>
+                                <div class="actions">
+                                    <span>Me gusta</span> · <span>Responder</span> · <span class="likes-count"><img
+                                            src="../img/fblike.webp" alt="like"> 10</span> · <span class="time">26
+                                        m</span>
+                                </div>
                             </div>
-                            <div class="actions">
-                                <span>Me gusta</span> · <span>Responder</span> · <span class="likes-count"><img
-                                        src="../img/fblike.webp" alt="like"> 15</span> · <span class="time">19 m</span>
+                        </div>
+                        <!-- Reply -->
+                        <div class="replies">
+                            <div class="comment-row">
+                                <img class="avatar" src="../img/pikGKW2632243.jpeg" alt="Laura">
+                                <div class="comment-content">
+                                    <div class="bubble">
+                                        <div class="name">Laura Berrío</div>
+                                        <div class="text">Si esto hubiera existido antes, mi ex nunca me habría dejado
+                                            😂</div>
+                                    </div>
+                                    <div class="actions">
+                                        <span>Me gusta</span> · <span>Responder</span> · <span class="likes-count"><img
+                                                src="../img/fblike.webp" alt="like"> 8</span> · <span class="time">32
+                                            m</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Comment 3 -->
-                    <div class="comment-row">
-                        <img class="avatar" src="../img/ynFAzm0760781.jpeg" alt="Valentina">
-                        <div class="comment-content">
-                            <div class="bubble">
-                                <div class="name">Valentina Pineda</div>
-                                <div class="text">Mi amiga me envió este video y pensé “ya valió”. Pero lo juro… ¡esta
-                                    Olivia me dio ORO!</div>
-                            </div>
-                            <div class="actions">
-                                <span>Me gusta</span> · <span>Responder</span> · <span class="likes-count"><img
-                                        src="../img/fblike.webp" alt="like"> 10</span> · <span class="time">26 m</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Comment 4 -->
-                    <div class="comment-row has-children">
-                        <img class="avatar" src="../img/pikGKW2632243.jpeg" alt="Laura">
-                        <div class="comment-content">
-                            <div class="bubble">
-                                <div class="name">Laura Berrío</div>
-                                <div class="text">Si esto hubiera existido antes, mi ex nunca me habría dejado 😂</div>
-                            </div>
-                            <div class="actions">
-                                <span>Me gusta</span> · <span>Responder</span> · <span class="likes-count"><img
-                                        src="../img/fblike.webp" alt="like"> 8</span> · <span class="time">32 m</span>
+                    <!-- Block 3: Florencia -> Martina, Jessica -->
+                    <div class="comment-thread">
+                        <!-- Parent -->
+                        <div class="comment-row">
+                            <img class="avatar" src="../img/YwgHeF0760781.jpeg" alt="Florencia">
+                            <div class="comment-content">
+                                <div class="bubble">
+                                    <div class="name">Florencia Sosa</div>
+                                    <div class="text">Lo más loco es que realmente les revuelve la mente. Él mismo dijo
+                                        que
+                                        nunca se había sentido así conmigo antes 😳</div>
+                                </div>
+                                <div class="actions">
+                                    <span>Me gusta</span> · <span>Responder</span> · <span class="likes-count"><img
+                                            src="../img/fblike.webp" alt="like"> 21</span> · <span class="time">41
+                                        m</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Comment 5 -->
-                    <div class="comment-row">
-                        <img class="avatar" src="../img/YwgHeF0760781.jpeg" alt="Florencia">
-                        <div class="comment-content">
-                            <div class="bubble">
-                                <div class="name">Florencia Sosa</div>
-                                <div class="text">Lo más loco es que realmente les revuelve la mente. Él mismo dijo que
-                                    nunca se había sentido así conmigo antes 😳</div>
+                        <!-- Replies -->
+                        <div class="replies">
+                            <!-- Reply 1 -->
+                            <div class="comment-row">
+                                <img class="avatar" src="../img/koPWQB2632243.jpeg" alt="Martina">
+                                <div class="comment-content">
+                                    <div class="bubble">
+                                        <div class="name">Martina Ibarra</div>
+                                        <div class="text">Me puse súper hot solo escuchando a esta mujer hablar. Estoy
+                                            lista
+                                            para probar esto hoy en la noche 😈</div>
+                                    </div>
+                                    <div class="actions">
+                                        <span>Me gusta</span> · <span>Responder</span> · <span class="likes-count"><img
+                                                src="../img/fblike.webp" alt="like"> 11</span> · <span class="time">48
+                                            m</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="actions">
-                                <span>Me gusta</span> · <span>Responder</span> · <span class="likes-count"><img
-                                        src="../img/fblike.webp" alt="like"> 21</span> · <span class="time">41 m</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Comment 6 -->
-                    <div class="comment-row has-children">
-                        <img class="avatar" src="../img/koPWQB2632243.jpeg" alt="Martina">
-                        <div class="comment-content">
-                            <div class="bubble">
-                                <div class="name">Martina Ibarra</div>
-                                <div class="text">Me puse súper hot solo escuchando a esta mujer hablar. Estoy lista
-                                    para probar esto hoy en la noche 😈</div>
-                            </div>
-                            <div class="actions">
-                                <span>Me gusta</span> · <span>Responder</span> · <span class="likes-count"><img
-                                        src="../img/fblike.webp" alt="like"> 11</span> · <span class="time">48 m</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Comment 7 -->
-                    <div class="comment-row has-children">
-                        <img class="avatar" src="../img/iYjjBk0760781.jpeg" alt="Jessica">
-                        <div class="comment-content">
-                            <div class="bubble">
-                                <div class="name">Jessica Rivera</div>
-                                <div class="text">Ya se lo envié a mis 3 mejores amigas. Nos vamos a convertir en
-                                    Cleopatras modernas jajaja</div>
-                            </div>
-                            <div class="actions">
-                                <span>Me gusta</span> · <span>Responder</span> · <span class="likes-count"><img
-                                        src="../img/fblike.webp" alt="like"> 12</span> · <span class="time">57 m</span>
+                            <!-- Reply 2 -->
+                            <div class="comment-row">
+                                <img class="avatar" src="../img/iYjjBk0760781.jpeg" alt="Jessica">
+                                <div class="comment-content">
+                                    <div class="bubble">
+                                        <div class="name">Jessica Rivera</div>
+                                        <div class="text">Ya se lo envié a mis 3 mejores amigas. Nos vamos a convertir
+                                            en
+                                            Cleopatras modernas jajaja</div>
+                                    </div>
+                                    <div class="actions">
+                                        <span>Me gusta</span> · <span>Responder</span> · <span class="likes-count"><img
+                                                src="../img/fblike.webp" alt="like"> 12</span> · <span class="time">57
+                                            m</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
