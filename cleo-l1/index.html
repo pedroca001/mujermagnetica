@@ -29,335 +29,338 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Styles -->
+    <!-- TIMESTAMP: 2026-01-28 UPDATE 2 -->
     <style>
-:root {
-    --primary-color: #b00;
-    /* Dark Red for header */
-    --text-color: #333;
-    --bg-color: #fff;
-    --meta-color: #666;
-    --link-blue: #365899;
-    /* FB Blue */
-    --comment-bg: #f2f3f5;
-    --max-width: 800px;
-}
+        :root {
+            --primary-color: #b00;
+            /* Dark Red for header */
+            --text-color: #333;
+            --bg-color: #fff;
+            --meta-color: #666;
+            --link-blue: #365899;
+            /* FB Blue */
+            --comment-bg: #f2f3f5;
+            --max-width: 800px;
+        }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    line-height: 1.5;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.5;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
 
-.container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 15px;
-}
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 15px;
+        }
 
-/* Navbar */
-.news-navbar {
-    background-color: var(--primary-color);
-    color: #fff;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
+        /* Navbar */
+        .news-navbar {
+            background-color: var(--primary-color);
+            color: #fff;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
 
-.news-navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
+        .news-navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
 
-.nav-left,
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 20px;
-    /* Increased icon size slightly */
-    cursor: pointer;
-    flex: 1;
-    /* Take up available space */
-}
+        .nav-left,
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 20px;
+            /* Increased icon size slightly */
+            cursor: pointer;
+            flex: 1;
+            /* Take up available space */
+        }
 
-.nav-right {
-    justify-content: flex-end;
-    /* Push search icon to the right */
-}
+        .nav-right {
+            justify-content: flex-end;
+            /* Push search icon to the right */
+        }
 
-/* Ensure bars icon stays left */
-.nav-left {
-    justify-content: flex-start;
-}
+        /* Ensure bars icon stays left */
+        .nav-left {
+            justify-content: flex-start;
+        }
 
-.nav-center {
-    font-weight: 500;
-    font-size: 18px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;
-    /* Added Poppins */
-    text-align: center;
-    /* Ensure text is centered if it spans */
-}
+        .nav-center {
+            font-weight: 500;
+            font-size: 18px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            /* Added Poppins */
+            text-align: center;
+            /* Ensure text is centered if it spans */
+        }
 
-/* Main Content */
-.main-content {
-    padding: 10px 0 30px;
-    /* Reduced top padding */
-}
+        /* Main Content */
+        .main-content {
+            padding: 10px 0 30px;
+            /* Reduced top padding */
+        }
 
-.article-header {
-    text-align: center;
-    /* Center the container content by default, can override specific children */
-    margin-bottom: 20px;
-}
+        .article-header {
+            text-align: center;
+            /* Center the container content by default, can override specific children */
+            margin-bottom: 20px;
+        }
 
-.article-header h1 {
-    font-size: 38px;
-    /* Desktop size */
-    font-family: 'Poppins', sans-serif;
-    /* Added Poppins */
-    font-weight: 700;
-    /* Adjusted weight for Poppins */
-    line-height: 1.2;
-    margin-bottom: 10px;
-    /* Reduced from 15px */
-    color: #000;
-    letter-spacing: -0.5px;
-    text-align: center;
-}
+        .article-header h1 {
+            font-size: 38px;
+            /* Desktop size */
+            font-family: 'Poppins', sans-serif;
+            /* Added Poppins */
+            font-weight: 700;
+            /* Adjusted weight for Poppins */
+            line-height: 1.2;
+            margin-bottom: 10px;
+            /* Reduced from 15px */
+            color: #000;
+            letter-spacing: -0.5px;
+            text-align: center;
+        }
 
-.subheadline {
-    font-size: 16px;
-    /* Reduced size */
-    font-weight: 500;
-    margin-bottom: 10px;
-    /* Reduced from 15px */
-    padding: 2px 0 2px 15px;
-    border-left: 6px solid #b00;
-    /* Slightly thicker bar */
-    line-height: 1.4;
-    color: #333;
-    text-align: left;
-    /* Explicitly left aligned */
-    display: inline-block;
-    /* Allows text-align center on parent to center the block if width < 100%, but we want the block to fill? Actually usually these are full width text blocks. */
-    width: 100%;
-}
+        .subheadline {
+            font-size: 16px;
+            /* Reduced size */
+            font-weight: 500;
+            margin-bottom: 10px;
+            /* Reduced from 15px */
+            padding: 2px 0 2px 15px;
+            border-left: 6px solid #b00;
+            /* Slightly thicker bar */
+            line-height: 1.4;
+            color: #333;
+            text-align: left;
+            /* Explicitly left aligned */
+            display: inline-block;
+            /* Allows text-align center on parent to center the block if width < 100%, but we want the block to fill? Actually usually these are full width text blocks. */
+            width: 100%;
+        }
 
-.article-meta {
-    font-size: 13px;
-    color: var(--meta-color);
-    font-weight: 500;
-    text-align: left;
-    /* Left align the container */
-    display: flex;
-    flex-direction: column;
-    /* Stack items vertically */
-    gap: 2px;
-    /* Small gap between author and date */
-    margin-left: 15px;
-    /* Match indentation of subheadline or keep aligned layout */
-}
+        .article-meta {
+            font-size: 13px;
+            color: var(--meta-color);
+            font-weight: 500;
+            text-align: left;
+            /* Left align the container */
+            display: flex;
+            flex-direction: column;
+            /* Stack items vertically */
+            gap: 2px;
+            /* Small gap between author and date */
+            margin-left: 15px;
+            /* Match indentation of subheadline or keep aligned layout */
+        }
 
-/* Remove margin-right since they are stacked now */
-.article-meta .author {
-    font-weight: 700;
-    color: #333;
-    margin-right: 0;
-}
+        /* Remove margin-right since they are stacked now */
+        .article-meta .author {
+            font-weight: 700;
+            color: #333;
+            margin-right: 0;
+        }
 
-/* Video */
-.video-wrapper {
-    margin-bottom: 15px;
-}
+        /* Video */
+        .video-wrapper {
+            margin-bottom: 15px;
+        }
 
-.video-container {
-    width: 100%;
-    background: #000;
-    border-radius: 4px;
-    /* Slight rounded corners */
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
+        .video-container {
+            width: 100%;
+            background: #000;
+            border-radius: 4px;
+            /* Slight rounded corners */
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
 
-/* Video Footer */
-.video-footer {
-    text-align: center;
-    margin-bottom: 40px;
-}
+        /* Video Footer */
+        .video-footer {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-.viewer-count {
-    color: #000;
-    /* Black text usually, or red for emphasis? User snippet had red number */
-    font-size: 16px;
-    margin-bottom: 15px;
-}
+        .viewer-count {
+            color: #000;
+            /* Black text usually, or red for emphasis? User snippet had red number */
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
 
-.viewer-count .count-number {
-    color: #cc0000;
-    font-weight: 700;
-}
+        .viewer-count .count-number {
+            color: #cc0000;
+            font-weight: 700;
+        }
 
-.trust-logos img {
-    max-width: 100%;
-    height: auto;
-    width: 600px;
-}
+        .trust-logos img {
+            max-width: 100%;
+            height: auto;
+            width: 600px !important;
+        }
 
-/* Comments */
-.comments-section {
-    background: #fff;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
-}
+        /* Comments */
+        .comments-section {
+            background: #fff;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
 
-.comments-count {
-    font-weight: 700;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-    color: #333;
-}
+        .comments-count {
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            color: #333;
+        }
 
-.comment-row {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-}
+        .comment-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
 
-/* .comment-row.has-children { } */
+        /* .comment-row.has-children { } */
 
-.avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-}
+        .avatar {
+            width: 40px !important;
+            height: 40px !important;
+            border-radius: 50%;
+            object-fit: cover;
+        }
 
-.comment-content {
-    flex: 1;
-}
+        .comment-content {
+            flex: 1;
+        }
 
-.bubble {
-    background-color: var(--comment-bg);
-    padding: 10px 15px;
-    border-radius: 18px;
-    display: inline-block;
-    position: relative;
-}
+        .bubble {
+            background-color: var(--comment-bg);
+            padding: 10px 15px;
+            border-radius: 18px;
+            display: inline-block;
+            position: relative;
+            max-width: 100%;
+            /* Ensure bubble doesnt overflow */
+        }
 
-.bubble .name {
-    font-weight: 700;
-    font-size: 13px;
-    color: var(--link-blue);
-    margin-bottom: 3px;
-}
+        .bubble .name {
+            font-weight: 700;
+            font-size: 13px;
+            color: var(--link-blue);
+            margin-bottom: 3px;
+        }
 
-.bubble .text {
-    font-size: 14px;
-    color: #1c1e21;
-}
+        .bubble .text {
+            font-size: 14px;
+            color: #1c1e21;
+        }
 
-.actions {
-    margin-top: 5px;
-    margin-left: 10px;
-    /* Align with bubble */
-    font-size: 12px;
-    color: #65676b;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
+        .actions {
+            margin-top: 5px;
+            margin-left: 10px;
+            /* Align with bubble */
+            font-size: 12px;
+            color: #65676b;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
 
-.actions span {
-    cursor: pointer;
-}
+        .actions span {
+            cursor: pointer;
+        }
 
-.actions span:hover {
-    text-decoration: underline;
-}
+        .actions span:hover {
+            text-decoration: underline;
+        }
 
-.likes-count {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-}
+        .likes-count {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
 
-.likes-count img {
-    width: 16px;
-    height: 16px;
-}
+        .likes-count img {
+            width: 16px;
+            height: 16px;
+        }
 
-.comments-footer {
-    border-top: 1px solid #eee;
-    padding-top: 15px;
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: #666;
-    font-size: 12px;
-}
+        .comments-footer {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #666;
+            font-size: 12px;
+        }
 
-.comments-footer img {
-    width: 16px;
-    height: 16px;
-}
+        .comments-footer img {
+            width: 16px;
+            height: 16px;
+        }
 
 
-/* Footer Removed */
+        /* Footer Removed */
 
-/* Responsive */
-@media (max-width: 600px) {
-    .article-header h1 {
-        font-size: 21px;
-        line-height: 1.3;
-        margin-bottom: 8px;
-        /* Tighter on mobile */
-    }
+        /* Responsive */
+        @media (max-width: 600px) {
+            .article-header h1 {
+                font-size: 21px;
+                line-height: 1.3;
+                margin-bottom: 8px;
+                /* Tighter on mobile */
+            }
 
-    .subheadline {
-        font-size: 15px;
-        /* Slight reduction for mobile if needed, or keep 16 */
-        margin-bottom: 8px;
-        /* Tighter on mobile */
-    }
+            .subheadline {
+                font-size: 15px;
+                /* Slight reduction for mobile if needed, or keep 16 */
+                margin-bottom: 8px;
+                /* Tighter on mobile */
+            }
 
-    .article-header {
-        margin-bottom: 15px;
-        /* Tighter on mobile */
-    }
+            .article-header {
+                margin-bottom: 15px;
+                /* Tighter on mobile */
+            }
 
-    .nav-center {
-        font-size: 16px;
-    }
+            .nav-center {
+                font-size: 16px;
+            }
 
-    .trust-logos img {
-        width: 100%;
-    }
+            .trust-logos img {
+                width: 100%;
+            }
 
-    .bubble {
-        width: 100%;
-        /* Full width bubble on mobile often looks better */
-    }
-}
+            .bubble {
+                width: 100%;
+                /* Full width bubble on mobile often looks better */
+            }
+        }
     </style>
 
     <!-- UTMify -->
