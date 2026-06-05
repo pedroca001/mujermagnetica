@@ -7,16 +7,17 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!viewerCountElement) return;
 
         // Get min/max from data attributes if available, else default
+        // Get min/max from data attributes if available, else default
         let min = parseInt(viewerCountElement.getAttribute('data-min')) || 400;
-        let max = parseInt(viewerCountElement.getAttribute('data-max')) || 700;
+        let max = parseInt(viewerCountElement.getAttribute('data-max')) || 800; // Updated to 800
 
         const randomCount = Math.floor(Math.random() * (max - min + 1)) + min;
         viewerCountElement.textContent = randomCount;
     }
 
-    // Update immediately and then every 10 seconds
+    // Update immediately and then every 7 seconds
     updateViewerCount();
-    setInterval(updateViewerCount, 10000);
+    setInterval(updateViewerCount, 7000);
 
 
     // --- UTM Parameter Forwarding ---
